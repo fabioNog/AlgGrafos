@@ -35,6 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/arqEscrita.o \
+	${OBJECTDIR}/arqEscrita2.o \
+	${OBJECTDIR}/arqLeitura.o \
+	${OBJECTDIR}/leitorString.o \
 	${OBJECTDIR}/listaAdj.o \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/matrizAdj.o
@@ -63,6 +67,26 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/grafos: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/grafos ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/arqEscrita.o: arqEscrita.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/arqEscrita.o arqEscrita.cpp
+
+${OBJECTDIR}/arqEscrita2.o: arqEscrita2.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/arqEscrita2.o arqEscrita2.cpp
+
+${OBJECTDIR}/arqLeitura.o: arqLeitura.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/arqLeitura.o arqLeitura.cpp
+
+${OBJECTDIR}/leitorString.o: leitorString.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/leitorString.o leitorString.cpp
 
 ${OBJECTDIR}/listaAdj.o: listaAdj.cpp
 	${MKDIR} -p ${OBJECTDIR}

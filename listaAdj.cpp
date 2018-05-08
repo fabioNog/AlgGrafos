@@ -61,3 +61,23 @@ void lista::imprime(){
     }
     cout << "++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
 }
+
+
+//Retorna o ponteiro para o primeiro elemento da lista
+noh* lista::getPrimeiro(){
+    return this->primeiro;
+}
+
+//Retorna o dado do noh da lista;
+
+Dado lista::getDado(noh* aux){
+    return aux->dado;
+}
+
+noh* lista::getProximo(noh* aux){
+    return aux->proximo;
+}
+
+noh* lista::getNo(noh* no){
+    return no;
+}

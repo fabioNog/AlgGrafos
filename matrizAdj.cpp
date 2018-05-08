@@ -6,16 +6,17 @@
 using namespace std;
 
 matriz::matriz(int linha, int coluna) {
-    linha = linha;
-    coluna = coluna;
+    this->linha = linha;
+    this->coluna = coluna;
     mat = new int*[linha];
-    for(int i=0;i<linha;i++){
+    for (int i = 0; i < linha; i++) {
         mat[i] = new int[coluna];
     }
 }
 
 void matriz::insere() {
     int valor;
+    cout << "Chego aqui no insere" << endl;
     for (int i = 0; i < this->getLinha(); i++) {
         for (int j = 0; j < this->getColuna(); j++) {
             cout << "Digite um valor a ser inserido na matriz: " << endl;
@@ -38,7 +39,7 @@ int matriz::getLinha() {
 }
 
 int matriz::getColuna() {
-    return this->getColuna();
+    return this->coluna;
 }
 
 

@@ -27,7 +27,10 @@ public:
    inline bool vazia();
    void insere(Dado d);
    void imprime();
-    
+   noh* getPrimeiro();
+   Dado getDado(noh* aux);
+   noh* getProximo(noh* aux);
+   noh* getNo(noh* noh);
 };
 
 

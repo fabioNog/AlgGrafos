@@ -11,6 +11,10 @@
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>arqEscrita.cpp</itemPath>
+      <itemPath>arqEscrita2.cpp</itemPath>
+      <itemPath>arqLeitura.cpp</itemPath>
+      <itemPath>leitorString.cpp</itemPath>
       <itemPath>listaAdj.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
       <itemPath>matrizAdj.cpp</itemPath>
@@ -41,7 +45,15 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="arqEscrita.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="arqEscrita2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="arqLeitura.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="grafo.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="leitorString.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="listaAdj.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -74,7 +86,15 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="arqEscrita.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="arqEscrita2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="arqLeitura.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="grafo.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="leitorString.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="listaAdj.cpp" ex="false" tool="1" flavor2="0">
       </item>
