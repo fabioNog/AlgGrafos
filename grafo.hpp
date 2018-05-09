@@ -14,10 +14,10 @@ private:
 
 public:
     grafo(Dado V);
-    void insere();
     void adicionarAresta(Dado v1, Dado v2); // adiciona uma aresta no grafo
     int obterGrauDeSaida(Dado v);
     bool ehVizinho(Dado v1, Dado v2);
+    void imprimeListas();
 };
 
 

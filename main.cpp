@@ -1,14 +1,22 @@
+//Bibliotecas do C++
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
 #include <string>
+
+//Bibliotecas criadas por mim
 #include "listaAdj.hpp"
 #include "matrizAdj.hpp"
+#include "grafo.hpp"
 
 using namespace std;
 
 int main() {
-    ifstream arquivo("Arquivo1.txt");
+    
+    string s;
+    cout << "Digite o valor do arquivo" << endl;
+    cin >> s;
+    ifstream arquivo(s);
     string dados;
     cout << endl;
     lista* L;
@@ -39,12 +47,24 @@ int main() {
     vet = new Dado[cont];
     noh* atual = L->getPrimeiro();
     
-
     for (int i = 0; i < cont; i++) {
         vet[i] = L->getDado(atual);
         atual = L->getProximo(atual);
+    }
+    for (int i = 0; i < cont; i++) {
         cout << vet[i] << endl;
     }
+    
+//    Instanciando um grafo
+    grafo* F = new grafo(cont);
+    
+    int i=0;
+    while(i < cont){
+        F->adicionarAresta(vet[i],vet[i+1]);
+        i = i+2;
+    }
+    
+    F->imprimeListas();
 
     return 0;
 }
