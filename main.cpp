@@ -1,45 +1,52 @@
 #include <iostream>
+#include <fstream>
 #include <cstdlib>
-#include <cstdio>
+#include <string>
 #include "listaAdj.hpp"
 #include "matrizAdj.hpp"
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
-    
-    int dado;
-    int Q;
-    cout << "Digite a quantidade de elementos que estarao presentes na lista" << endl;
-    cin >> Q;
-    lista* L = new lista();
-    
-    for(int i=0;i<Q;i++){
-        cout << "Digite o " << (i+1) << " valor a ser inserido nesta lista" << endl;
-        cin >> dado;
-        L->insere(dado);
-    }
-    
-    L->imprime();
+int main() {
+    ifstream arquivo("Arquivo1.txt");
+    string dados;
+    cout << endl;
+    lista* L;
+    L = new lista();
+    Dado* vet;
 
-//Testandoo a class Matriz
+    int cont = 0;
+
+    //    Primeiro Verifica-se se o arquivo foi aberto corretamente 
+    //    Se sim então ele entrara no while
+    if (arquivo) {
+        //        Dentro deste while eu pegarei cada string do arquivo e armazenarei em uma lista
+        while (arquivo >> dados) {
+            if (dados == "DIRECTED") {
+                continue;
+            }
+            string s = dados;
+            int i = stoi(s);
+            L->insere(i);
+            cont++;
+        }
+        
+        
+        arquivo.close();
+
+    }
+//       Alocarei um vetor de tamanho referente a quantidade(cont) de strings contidas no arquivo  
+    vet = new Dado[cont];
+    noh* atual = L->getPrimeiro();
     
-//    int i,j;
-//    int linha,coluna;
-//    
-//    cout << "Digite a quantidade de linhas da matriz:" << endl;
-//    cin >> linha;
-//    cout << "Digite a quantidade de colunas da matriz:" << endl;
-//    cin >> coluna;
-//    
-//    matriz* M = new matriz(linha,coluna);    
-//    
-//    M->insere();
-//    M->imprime();
-    
+
+    for (int i = 0; i < cont; i++) {
+        vet[i] = L->getDado(atual);
+        atual = L->getProximo(atual);
+        cout << vet[i] << endl;
+    }
+
     return 0;
 }
+//    L->imprime();
 

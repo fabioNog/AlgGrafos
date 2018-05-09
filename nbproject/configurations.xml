@@ -14,6 +14,7 @@
       <itemPath>arqEscrita.cpp</itemPath>
       <itemPath>arqEscrita2.cpp</itemPath>
       <itemPath>arqLeitura.cpp</itemPath>
+      <itemPath>grafo.cpp</itemPath>
       <itemPath>leitorString.cpp</itemPath>
       <itemPath>listaAdj.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -50,6 +51,8 @@
       <item path="arqEscrita2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="arqLeitura.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="grafo.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="grafo.hpp" ex="false" tool="3" flavor2="0">
       </item>
@@ -91,6 +94,8 @@
       <item path="arqEscrita2.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="arqLeitura.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="grafo.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="grafo.hpp" ex="false" tool="3" flavor2="0">
       </item>

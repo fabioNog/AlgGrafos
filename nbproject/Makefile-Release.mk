@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/arqEscrita.o \
 	${OBJECTDIR}/arqEscrita2.o \
 	${OBJECTDIR}/arqLeitura.o \
+	${OBJECTDIR}/grafo.o \
 	${OBJECTDIR}/leitorString.o \
 	${OBJECTDIR}/listaAdj.o \
 	${OBJECTDIR}/main.o \
@@ -82,6 +83,11 @@ ${OBJECTDIR}/arqLeitura.o: arqLeitura.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/arqLeitura.o arqLeitura.cpp
+
+${OBJECTDIR}/grafo.o: grafo.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/grafo.o grafo.cpp
 
 ${OBJECTDIR}/leitorString.o: leitorString.cpp
 	${MKDIR} -p ${OBJECTDIR}

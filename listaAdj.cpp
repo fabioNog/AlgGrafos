@@ -81,3 +81,7 @@ noh* lista::getProximo(noh* aux){
 noh* lista::getNo(noh* no){
     return no;
 }
+
+int lista::getTamanho(){
+    return this->tamanho;
+}

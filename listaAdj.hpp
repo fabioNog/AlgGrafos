@@ -31,6 +31,7 @@ public:
    Dado getDado(noh* aux);
    noh* getProximo(noh* aux);
    noh* getNo(noh* noh);
+   int getTamanho();
 };
 
 
