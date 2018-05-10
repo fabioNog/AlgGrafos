@@ -16,21 +16,30 @@ int main() {
     string s;
     cout << "Digite o valor do arquivo" << endl;
     cin >> s;
+
+    //++++++++++++++++++++++++++++++++++++++++++++    
+    //    DECLARANDO  VARIAVEIS 
+    //++++++++++++++++++++++++++++++++++++++++++++      
     ifstream arquivo(s);
     string dados;
-    cout << endl;
+
     lista* LArq;
     lista* LVert1;
     LArq = new lista();
     LVert1 = new lista();
+
     Dado* vet;
 
     int cont = 0;
 
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
     //    Primeiro Verifica-se se o arquivo foi aberto corretamente 
     //    Se sim então ele entrara no while
+    //    DENTRO DO WHILE INSIREI TODAS AS STRINGS DO ARQUIVO EM UMA LISTA ENCADEADA
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
     if (arquivo) {
-        //        Dentro deste while eu pegarei cada string do arquivo e armazenarei em uma lista
+        // Dentro deste while eu pegarei cada string do arquivo e armazenarei em uma lista
         while (arquivo >> dados) {
             if (dados == "DIRECTED") {
                 continue;
@@ -42,31 +51,60 @@ int main() {
         }
         arquivo.close();
     }
-    
-    //       Alocarei um vetor de tamanho referente a quantidade(cont) de strings contidas no arquivo  
-    vet = new Dado[cont];
-    noh* atual = LArq->getPrimeiro();
 
-    while (atual != LArq->getUltimo()) {
-        LVert1->insere(LArq->getDado(atual));
-        atual = LArq->getProximo(LArq->getProximo(atual));
-        if(atual == NULL){
-            atual = LArq->getUltimo();
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+    //    ALOCANDO TODOS AS STRINGS PARES EM UMA LISTA SECUNDARIA 
+    //    AO QUAL GERARA UMA LISTA DE AO QUAL SEU TAMANHO É A METADE DA LISTA QUE A GEROU
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    noh* atual1 = LArq->getPrimeiro();
+
+    while (atual1 != LArq->getUltimo()) {
+        LVert1->insere(LArq->getDado(atual1));
+        atual1 = LArq->getProximo(LArq->getProximo(atual1));
+        if (atual1 == NULL) {
+            atual1 = LArq->getUltimo();
         }
     }
 
-    LVert1->imprime();
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+    //    FAZENDO A COMPARAÇÃO DE QUANTAS VEZES UM ELEMENTO APARECE NA LISTA
+    //    AO QUAL GERARA UMA LISTA DE AO QUAL SEU TAMANHO É A METADE DA LISTA QUE A GEROU
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    noh* atual1 = LVert1->getPrimeiro();
+    noh* aux1;
+    int cont1 = 0;
+    lista* ListaTamanho;
+    ListaTamanho = new lista();
+    while (atual1 != NULL) {
+        aux1 = LVert1->getProximo(atual1);
+        while (aux1 != NULL) {
+            if (LVert1->getDado(atual1) == LVert1->getDado(aux1)) {
+                cont1++;
+                aux1 = LVert1->getProximo(aux1);
+            }
+        }
+        ListaTamanho->insere(cont1);
+        atual1 = LVert1->getProximo(atual1);
+    }
+
+    ListaTamanho->imprime();
+
 
 
 
     //++++++++++++++++++++++++++++++++++++++++++++    
     //    INSERE UMA LISTA EM UM VETOR 
-    //++++++++++++++++++++++++++++++++++++++++++++        
-    for (int i = 0; i < cont; i++) {
-        cout << "Cheguei aqui" << endl;
-        vet[i] = LArq->getDado(atual);
-        atual = LArq->getProximo(atual);
-    }
+    //++++++++++++++++++++++++++++++++++++++++++++
+    //vet = new Dado[cont];
+    //    for (int i = 0; i < cont; i++) {
+    //        cout << "Cheguei aqui" << endl;
+    //        vet[i] = LArq->getDado(atual1);
+    //        atual1 = LArq->getProximo(atual1);
+    //    }
+    //++++++++++++++++++++++++++++++++++++++++++++    
+    //    INSERE UMA LISTA EM UM VETOR 
+    //++++++++++++++++++++++++++++++++++++++++++++ 
 
 
 
