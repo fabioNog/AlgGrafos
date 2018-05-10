@@ -68,8 +68,12 @@ noh* lista::getPrimeiro(){
     return this->primeiro;
 }
 
-//Retorna o dado do noh da lista;
+//Retorna o ponteiro para o ultimo elemento da lista
+noh* lista::getUltimo(){
+    return this->ultimo;
+}
 
+//Retorna o dado do noh da lista;
 Dado lista::getDado(noh* aux){
     return aux->dado;
 }

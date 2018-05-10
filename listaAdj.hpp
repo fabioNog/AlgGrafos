@@ -28,10 +28,12 @@ public:
    void insere(Dado d);
    void imprime();
    noh* getPrimeiro();
+   noh* getUltimo();
    Dado getDado(noh* aux);
    noh* getProximo(noh* aux);
    noh* getNo(noh* noh);
    int getTamanho();
+   
 };
 
 
