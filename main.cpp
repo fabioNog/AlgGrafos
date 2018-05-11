@@ -65,19 +65,32 @@ int main() {
             atual1 = LArq->getUltimo();
         }
     }
+    cout <<  "++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    cout << " IMPRIME LISTA " << endl;
+    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    LVert1->imprime();
 
-
+    //++++++++++++++++++++++++++++++++++++++++++++    
+    //    INSERE UMA LISTA EM UM VETOR 
+    //++++++++++++++++++++++++++++++++++++++++++++
     noh* atual2 = LVert1->getPrimeiro();
     vet = new Dado[LVert1->getTamanho()];
-    for (Dado i = 0; i < LVert1->getTamanho(); i++) {
-        if ((atual2 != NULL) and (atual2 != LVert1->getUltimo())) {
-            vet[i] = LVert1->getDado(atual2);
-            atual2 = LVert1->getProximo(atual2);
-        }
 
+    cout << "Este é o valor da primeira posicao da lista " << LVert1->getDado(LVert1->getPrimeiro()) << endl;
+    cout << "Este é o valor da primeira posicao da lista " << LVert1->getDado(LVert1->getUltimo()) << endl;
+    Dado cont2 = 0;
+    while ((atual2 != LVert1->getProximo(LVert1->getUltimo())) and (atual2 != NULL)) {
+        vet[cont2] = LVert1->getDado(atual2);
+        atual2 = LVert1->getProximo(atual2);
+        cont2++;
     }
 
-    for (int i = 0; i < cont; i++) {
+
+    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    cout << " IMPRIME VETOR " << endl;
+    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    //++++++++++++++++++++++++++++++++++++++++++++
+    for (int i = 0; i < LVert1->getTamanho(); i++) {
         cout << vet[i] << endl;
 
     }
@@ -93,9 +106,7 @@ int main() {
 
 
 
-    //++++++++++++++++++++++++++++++++++++++++++++    
-    //    INSERE UMA LISTA EM UM VETOR 
-    //++++++++++++++++++++++++++++++++++++++++++++
+
 
     //
     //    //++++++++++++++++++++++++++++++++++++++++++++    
