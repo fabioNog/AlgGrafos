@@ -30,7 +30,7 @@ int main() {
 
     Dado* vet;
 
-    int cont = 0;
+    Dado cont = 0;
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
     //    Primeiro Verifica-se se o arquivo foi aberto corretamente 
@@ -53,8 +53,8 @@ int main() {
     }
 
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
-    //    ALOCANDO TODOS AS STRINGS PARES EM UMA LISTA SECUNDARIA 
-    //    AO QUAL GERARA UMA LISTA DE AO QUAL SEU TAMANHO É A METADE DA LISTA QUE A GEROU
+    // *   ALOCANDO TODOS AS STRINGS PARES EM UMA VETOR SECUNDARIO 
+    // *   AO QUAL GERARA UMA LISTA DE AO QUAL SEU TAMANHO É A METADE DA LISTA QUE A GEROU
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     noh* atual1 = LArq->getPrimeiro();
 
@@ -66,88 +66,101 @@ int main() {
         }
     }
 
-    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
-    //    FAZENDO A COMPARAÇÃO DE QUANTAS VEZES UM ELEMENTO APARECE NA LISTA
-    //    AO QUAL GERARA UMA LISTA DE AO QUAL SEU TAMANHO É A METADE DA LISTA QUE A GEROU
-    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-    noh* atual1 = LVert1->getPrimeiro();
-    noh* aux1;
-    int cont1 = 0;
-    lista* ListaTamanho;
-    ListaTamanho = new lista();
-    while (atual1 != NULL) {
-        aux1 = LVert1->getProximo(atual1);
-        while (aux1 != NULL) {
-            if (LVert1->getDado(atual1) == LVert1->getDado(aux1)) {
-                cont1++;
-                aux1 = LVert1->getProximo(aux1);
-            }
+    noh* atual2 = LVert1->getPrimeiro();
+    vet = new Dado[LVert1->getTamanho()];
+    for (Dado i = 0; i < LVert1->getTamanho(); i++) {
+        if ((atual2 != NULL) and (atual2 != LVert1->getUltimo())) {
+            vet[i] = LVert1->getDado(atual2);
+            atual2 = LVert1->getProximo(atual2);
         }
-        ListaTamanho->insere(cont1);
-        atual1 = LVert1->getProximo(atual1);
+
     }
 
-    ListaTamanho->imprime();
+    for (int i = 0; i < cont; i++) {
+        cout << vet[i] << endl;
 
+    }
+
+
+
+
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+    //  *  Imprimeiri a lista com vertices apenas que pertecem ao primeiro vertice adicionado no grafo
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+    //    cout << "Imprimeiri a lista com vertices apenas que pertecem ao primeiro vertice adicionado no grafo" << endl;
+    //    LVert1->imprime();
 
 
 
     //++++++++++++++++++++++++++++++++++++++++++++    
     //    INSERE UMA LISTA EM UM VETOR 
     //++++++++++++++++++++++++++++++++++++++++++++
-    //vet = new Dado[cont];
-    //    for (int i = 0; i < cont; i++) {
-    //        cout << "Cheguei aqui" << endl;
-    //        vet[i] = LArq->getDado(atual1);
-    //        atual1 = LArq->getProximo(atual1);
+
+    //
+    //    //++++++++++++++++++++++++++++++++++++++++++++    
+    //    //    IMPRIME VETOR 
+    //    //++++++++++++++++++++++++++++++++++++++++++++
+    //    Dado Metade = LVert1->getTamanho();
+    //    cout << "Imprime o vetor " << endl;
+    //    for (int i = 0; i < Metade; i++) {
+    //        cout << vet[i] << endl;
     //    }
-    //++++++++++++++++++++++++++++++++++++++++++++    
-    //    INSERE UMA LISTA EM UM VETOR 
-    //++++++++++++++++++++++++++++++++++++++++++++ 
-
-
-
-    //    for (int i = 0; i < cont; i++) {
-    //        cout << vet[i];
+    //
+    //
+    //    Dado i, j, k;
+    //
+    //    Dado* Repetidos;
+    //    Repetidos = new Dado[Metade];
+    //
+    //    for (i = 0; i < Metade; i++) {
+    //        Repetidos[i] = -2;
     //    }
-    //    
-    //    cout << cont/2 << endl; 
-    //    
-    //    
-    ////    Instanciando um grafo
-    //    grafo* F = new grafo(cont);
-    //    
-    //    
-    //    
-    //    
-    //    int* vetGuarda;
-    //    vetGuarda = new int[cont/2];
-    //    int j=0;
-    //    for(int i=0;i<cont;i++){
-    //        vetGuarda[j] = vet[i];
-    //        j++;
-    //        i = i+2;
+    //
+    //    Dado* Repeticoes;
+    //    Repeticoes = new Dado[Metade];
+    //
+    //    for (i = 0; i < cont; i++) {
+    //        Repeticoes[i] = 1;
     //    }
-    //    for(int i=0;i<j;i++){
-    //        cout << vetGuarda[i];
-    //    }
-
-
-    //    ADICIONANDO NA LISTA DE ADJENCIA DO GRAFO;
-    //    int i=0;
-    //    while(i < cont){
-    //        F->adicionarAresta(vet[i],vet[i+1]);
-    //        F->guardaV1(vet[i]);
-    //        i = i+2;
-    //        if(i == cont){
-    //            i =  i - 2;
-    //            cout << "O valor do i antes de adicionar na aresta eh: " << i << endl;
-    //            F->adicionarAresta(vet[i],vet[i+1]);
-    //            F->guardaV1(vet[i]);
-    //            i = i + 2;
-    //            cout << "O valor do i depois de add na aresta agora eh: " << i << endl;
+    //
+    //    for (i = 0; i < cont; i++) {
+    //        //        printf("Digite o a[%d] = ", i);
+    //        //        scanf("%d", &Lidos[i]);
+    //
+    //        for (j = 0; j <= i; j++) {
+    //            if (vet[i] == Repetidos[j]) {
+    //                Repeticoes[j]++;
+    //                break;
+    //            } else if (Repetidos[j] == -2) {
+    //                Repetidos[i] = vet[i];
+    //            }
     //        }
+    //    }
+    //
+    //    if (vet[i] < 0 || i >= cont - 1) {
+    //        for (k = 0; k < i; k++) {
+    //            if ((Repeticoes[k] != 1) and (Repetidos[k] != -2)) {
+    //                cout << "O numero " << Repetidos[k] << " apareceu " << Repeticoes[k] << "vezes.\n";
+    //            }
+    //
+    //        }
+    //    }
+    //
+    //
+    //    grafo* F = new grafo(cont);
+
+
+
+    //    //        ADICIONANDO NA LISTA DE ADJENCIA DO GRAFO;
+    //    int i = 0;
+    //    cout << "Cheguei fora do while" << endl;
+    //    while (i < cont) {
+    //        cout << "Cheguei fora do while" << endl;
+    //        F->adicionarAresta(vet[i], vet[i + 1]);
+    //        i = i + 2;
+    //        cout << "Cheguei aqui 2" << endl;
+    //
     //    }
 
 

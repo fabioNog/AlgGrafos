@@ -24,8 +24,9 @@ public:
     void imprimeListas();
     Dado getV();
     Dado getTamVetor();
-    void guardaV1(Dado d);
+    
     void imprimeListaV1(lista* L);
+    Dado tamListaAdj(lista* l);
 };
 
 

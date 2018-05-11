@@ -86,6 +86,10 @@ noh* lista::getNo(noh* no){
     return no;
 }
 
-int lista::getTamanho(){
+Dado lista::getTamanho(){
     return this->tamanho;
+}
+
+Dado lista::getTamanhoLista(lista* L){
+    return L->getTamanho();
 }

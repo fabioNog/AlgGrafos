@@ -18,7 +18,7 @@ class lista{
 private:
     noh* primeiro;
     noh* ultimo;
-    int tamanho;
+    Dado tamanho;
 public:
     lista();
    ~lista();
@@ -32,7 +32,8 @@ public:
    Dado getDado(noh* aux);
    noh* getProximo(noh* aux);
    noh* getNo(noh* noh);
-   int getTamanho();
+   Dado getTamanho();
+   Dado getTamanhoLista(lista* L);
    
 };
 

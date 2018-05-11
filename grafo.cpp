@@ -15,24 +15,14 @@ void grafo::adicionarAresta(Dado v1, Dado v2) {
     // adiciona vértice v2 à lista de vértices adjacentes de v   
     L[v1].insere(v2);
     this->tamVetor++;
+    //    tamListaAdj(L[v1]);
 }
 
-void grafo::guardaV1(Dado d) {
+Dado grafo::tamListaAdj(lista* l) {
+    noh* aux = l->getPrimeiro();
 
-    Dado* V = new Dado[this->tamVetor];
-    for (int i = 0; i<this->tamVetor; i++) {
-        V[i] = d;
-        if (i == this->tamVetor) {
-            for (int j = 0; j < this->tamVetor; i++) {
-                cout << V[i] << endl;
-            }
-        }
+    cout << l->getDado(aux) << endl;
 
-    }
-
-}
-
-void grafo::imprimeListaV1(lista* L) {
 
 }
 
