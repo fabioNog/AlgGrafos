@@ -65,10 +65,10 @@ int main() {
             atual1 = LArq->getUltimo();
         }
     }
-    cout <<  "++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << " IMPRIME LISTA " << endl;
-    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    LVert1->imprime();
+    //    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    //    cout << " IMPRIME LISTA " << endl;
+    //    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    //    LVert1->imprime();
 
     //++++++++++++++++++++++++++++++++++++++++++++    
     //    INSERE UMA LISTA EM UM VETOR 
@@ -76,8 +76,6 @@ int main() {
     noh* atual2 = LVert1->getPrimeiro();
     vet = new Dado[LVert1->getTamanho()];
 
-    cout << "Este é o valor da primeira posicao da lista " << LVert1->getDado(LVert1->getPrimeiro()) << endl;
-    cout << "Este é o valor da primeira posicao da lista " << LVert1->getDado(LVert1->getUltimo()) << endl;
     Dado cont2 = 0;
     while ((atual2 != LVert1->getProximo(LVert1->getUltimo())) and (atual2 != NULL)) {
         vet[cont2] = LVert1->getDado(atual2);
@@ -86,14 +84,14 @@ int main() {
     }
 
 
-    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << " IMPRIME VETOR " << endl;
-    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    //++++++++++++++++++++++++++++++++++++++++++++
-    for (int i = 0; i < LVert1->getTamanho(); i++) {
-        cout << vet[i] << endl;
-
-    }
+    //    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    //    cout << " IMPRIME VETOR " << endl;
+    //    cout << "++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    //    //++++++++++++++++++++++++++++++++++++++++++++
+    //    for (int i = 0; i < LVert1->getTamanho(); i++) {
+    //        cout << vet[i] << endl;
+    //
+    //    }
 
 
 
@@ -108,57 +106,57 @@ int main() {
 
 
 
-    //
-    //    //++++++++++++++++++++++++++++++++++++++++++++    
-    //    //    IMPRIME VETOR 
-    //    //++++++++++++++++++++++++++++++++++++++++++++
-    //    Dado Metade = LVert1->getTamanho();
-    //    cout << "Imprime o vetor " << endl;
-    //    for (int i = 0; i < Metade; i++) {
-    //        cout << vet[i] << endl;
-    //    }
-    //
-    //
-    //    Dado i, j, k;
-    //
-    //    Dado* Repetidos;
-    //    Repetidos = new Dado[Metade];
-    //
-    //    for (i = 0; i < Metade; i++) {
-    //        Repetidos[i] = -2;
-    //    }
-    //
-    //    Dado* Repeticoes;
-    //    Repeticoes = new Dado[Metade];
-    //
-    //    for (i = 0; i < cont; i++) {
-    //        Repeticoes[i] = 1;
-    //    }
-    //
-    //    for (i = 0; i < cont; i++) {
-    //        //        printf("Digite o a[%d] = ", i);
-    //        //        scanf("%d", &Lidos[i]);
-    //
-    //        for (j = 0; j <= i; j++) {
-    //            if (vet[i] == Repetidos[j]) {
-    //                Repeticoes[j]++;
-    //                break;
-    //            } else if (Repetidos[j] == -2) {
-    //                Repetidos[i] = vet[i];
-    //            }
-    //        }
-    //    }
-    //
-    //    if (vet[i] < 0 || i >= cont - 1) {
-    //        for (k = 0; k < i; k++) {
-    //            if ((Repeticoes[k] != 1) and (Repetidos[k] != -2)) {
-    //                cout << "O numero " << Repetidos[k] << " apareceu " << Repeticoes[k] << "vezes.\n";
-    //            }
-    //
-    //        }
-    //    }
-    //
-    //
+
+    //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++    
+    //   VERIFICA QUANTAS VEZES CADA ELEMENTO DO VETOR VET APARECERA 
+    //   ASSIM DETERMINAREI O TAMANHO:
+    //   DA MATRIZ DE ADJACENCIA, O TAMANHO DA MATRIZ DE INCIDENCIA, E O TAMANHO DO VETOR DA LISTA DE ADJACENCIA
+    //   TUDO NUMA PAULADA SO :D :) :/ ":) 
+    //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    Dado i, j, k;
+    Dado* Repetidos;
+
+
+    Repetidos = new Dado[cont2];
+
+    for (i = 0; i < cont2; i++) {
+        Repetidos[i] = -2;
+    }
+
+    Dado* Repeticoes;
+    Repeticoes = new Dado[cont2];
+
+    for (i = 0; i < cont2; i++) {
+        Repeticoes[i] = 1;
+    }
+
+    for (i = 0; i < cont2; i++) {
+
+        for (j = 0; j <= i; j++) {
+            if (vet[i] == Repetidos[j]) {
+                Repeticoes[j]++;
+                break;
+            } else if (Repetidos[j] == -2) {
+                Repetidos[i] = vet[i];
+            }
+        }
+    }
+
+    int TamanhoFinal=0;
+    if (vet[i] < 0 || i >= cont2 - 1) {
+        for (k = 0; k < i; k++) {
+            if ((Repeticoes[k] != 1) and (Repetidos[k] != -2)) {
+                cout << "O numero " << Repetidos[k] << " apareceu " << Repeticoes[k] << "vezes.\n";
+                TamanhoFinal++;
+                
+            }
+
+        }
+    }
+
+    cout << "A ordem da Matriz de Adjacencia sera " << TamanhoFinal << endl;
+
     //    grafo* F = new grafo(cont);
 
 
